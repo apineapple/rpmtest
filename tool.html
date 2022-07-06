@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="apple-touch-icon-precomposed" sizes="57x57" href="icon.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icon.jpg" />
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icon.jpg" />
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icon.jpg" />
+      <title>
+         tnt
+      </title>
+      <link rel="shortcut icon" style="border-radius: 50% !important;" type="image/x-icon" href="icon.ico" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="webapi.js"></script>
+      <style>
+         .fa-clone {
+         padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 0;
+         left: 0;
+         }
+         .fa-archive {
+         padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 0;
+         left: 0px;
+         }
+         .fa-refresh {
+         padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 70px;
+         left: 4px;
+         }
+         .fa-caret-square-o-up{
+          padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 140px;
+         left: 4px;
+         }
+         .fa-caret-square-o-down{
+            padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 210px;
+         left: 4px;
+         }
+        .fa-cog {
+         padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         bottom: 20px;
+         left: 4px;
+         }
+         img{
+         width: 100px;
+         height: 100px;
+         border-radius: 5px;
+         }
+         a{
+         text-decoration: none;
+         }
+         a:hover{
+         text-decoration: none;
+         color: black;
+         }
+         .album{
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         /* bring your own prefixes */
+         transform: translate(-50%, -50%);
+         }
+         .all{
+    width: 300px;
+         }
+         /* Modal Content */
+         /* Add Animation */
+      </style>
+   </head>
+   <body>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script>
+         // place your images in this array
+var now = new Date();
+var start = new Date(now.getFullYear(), 0, 0);
+var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
+var oneDay = 1000 * 60 * 60 * 24;
+var day = Math.floor(diff / oneDay);
+var rando = 0;
+var rimg ="";
+var rlnk = "";
+
+         var array = [
+         ["swamp", "brockhampton"],
+         ["ginger", "brockhampton"]
+         ];
+
+      var cy = day/array.length;
+      var cycle = Math.floor(cy);
+      var num = array.length-1;
+      if (day <= array.length){
+         num = day-1;
+      }  
+         //num = images.length-1; // debug
+         //num = Math.floor( Math.random() * images.length );
+         
+        //  var img = images[ num ];
+        //  var lnk = url [ num ];
+          
+
+      var access = "BQDNj7NR_nJ0kAZPvNJIfa2KOtuR_Z1NSotCqaS_SNxsOf9k6hu0uPhtScjDAvFcopQ437X7gr6001qClbEjvH3Vi_WArxwSlC5tES3sPMVHyu7rTK1El9xSX6hamgOSsphRQP7O49H-fA7QsUONxK2FTLShmzENP1-eu7Ettg";
+
+
+
+       var itemsearch = "";
+      var alloutput = "";
+      var aimg = "";
+      var alnk = "";
+      var aname = "";
+      var aartist = "";
+      var allcontent = "";
+      var thiscontent = "";
+      var itn = 0;
+
+      var now = new Date();
+var start = new Date(now.getFullYear(), 0, 0);
+var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
+var oneDay = 1000 * 60 * 60 * 24;
+var day = Math.floor(diff / oneDay);
+var today = new Date();
+var yyyy = today.getFullYear();
+
+var vDay = day +(yyyy-2022)*366;
+
+var allApi = new SpotifyWebApi();
+allApi.setAccessToken(access);
+
+for(var j = 0; j < array.length; j++){
+itemsearch = array[j][0]+" "+array[j][1];
+
+alloutput = allApi.searchTracks(itemsearch, null, function(err, data){
+   if (err) console.error(err);
+  else 
+   raw = data.tracks.items[0];
+   aimg = raw.album.images[0].url;
+   aname = raw.name;
+   aartist = raw.artists[0].name;
+   alnk = "https://open.spotify.com/track/"+raw.id;
+
+thiscontent = aname;
+console.log(thiscontent);
+
+allcontent = allcontent+"['"+aname+"', '"+aartist+"', '"+alnk+"', '"+aimg+"', '"+vDay+"'],";
+itn++;
+document.getElementById("alldemo").innerHTML = allcontent;
+  }); 
+}
+         
+      </script>
+      <div id="alldemo" style="position: fixed;
+         left: 50%;
+         top:50%;
+         /* bring your own prefixes */
+         transform: translate(-50%, -50%); overflow-y: scroll; height: 300px !important;'">
+      </div>
+      <script>
+         window.addEventListener("keydown", checkKeyPressed, false);
+         
+         function checkKeyPressed(evt) {
+             if (evt.keyCode == "13") {
+                    window.location.reload();
+             }
+         }
+      </script>
+   </body>
+   <script>
+      var bingle = document.getElementById("alldemo").innerHTML;
+      console.log(bingle);
+   </script>
+</html>

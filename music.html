@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="apple-touch-icon-precomposed" sizes="57x57" href="icon.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icon.jpg" />
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icon.jpg" />
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icon.jpg" />
+      <title>
+         tnt
+      </title>
+      <link rel="shortcut icon" style="border-radius: 50% !important;" type="image/x-icon" href="icon.ico" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <style>
+           .fa-calendar{
+          padding: 20px;
+         font-size: 35px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: -10px;
+         right: -10px;
+         }
+           .fa-caret-square-o-left{
+          padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 0px;
+         left: 80px;
+         }
+         .fa-caret-square-o-right{
+            padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 70px;
+         left: 80px;
+         }
+         .fa-archive {
+         width: 40px;
+         height: 40px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 10px;
+         left: 10px;
+         }
+         #user{
+            position: fixed;
+            left: 60px;
+            top: 18px;
+            font-size: 18px;
+         }
+         #title{
+            text-align: center;
+            font-size: 16px;
+            margin-top: 15px;
+            max-width: 200px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: bold;
+         }
+         #artist{
+            margin-top: -5px;
+            text-align: center;
+            font-size: 14px;
+            max-width: 200px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+         }
+         img{
+         width: 93.3333333px;
+         height: 93.333333px;
+         border-radius: 5px;
+         }
+         a{
+         text-decoration: none;
+         }
+         a:hover{
+         text-decoration: none;
+         color: black;
+         }
+         .album{
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         /* bring your own prefixes */
+         transform: translate(-50%, -50%);
+         }
+        body{
+           background-image: url("icon.jpg");
+         }
+         /* Modal Content */
+         /* Add Animation */
+      </style>
+   </head>
+   <body>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script>
+         // place your images in this array
+
+         var array= [
+         ['GINGER', 'BROCKHAMPTON', 'https://open.spotify.com/track/1Uo7reO6I2yQ1q36ZPuNf7', 'https://i.scdn.co/image/ab67616d0000b27346f07fa4f28bf824840ddacb', '186', 'example'],
+         ['SWAMP', 'BROCKHAMPTON', 'https://open.spotify.com/track/6MTA4AwgmjVASTXpBEwvn8', 'https://i.scdn.co/image/ab67616d0000b2737d15fb20303a589acc1ab98b', '186', 'example2'],
+         ]
+
+         var num = Math.floor( Math.random() * array.length );
+         
+          var title = array[num][0];
+          var artist = array[num][1];
+          var lnk = array[num][2];
+          var img = array[num][3];     
+         
+         function getRandomTitle() {
+         	document.write("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:250px; height:250px;' src='"+img+"'></a><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
+            document.getElementById("user").innerHTML = (array[num][5]);
+          document.close();
+         }
+bonusnum = num;
+          function up() {
+             bonusnum = bonusnum -1;
+             if (bonusnum < 0){bonusnum = array.length-1;}
+          var btitle = array[bonusnum][0];
+          var bartist = array[bonusnum][1];
+          var blnk = array[bonusnum][2];
+          var bimg = array[bonusnum][3];
+document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+blnk+");} .im{visibility:hidden;}</style><a href='"+blnk+"'><img style='width:250px; height:250px;' src='"+bimg+"'></a><h3 id='title'>"+btitle+"</h3><h4 id='artist'>"+bartist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
+document.getElementById("user").innerHTML = (array[bonusnum][5]);
+          document.close();
+         }
+
+                  function down() {
+             bonusnum = bonusnum + 1;
+             if (bonusnum > array.length-1){bonusnum = 0;}
+          var utitle = array[bonusnum][0];
+          var uartist = array[bonusnum][1];
+          var ulnk = array[bonusnum][2];
+          var uimg = array[bonusnum][3];
+document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+ulnk+");} .im{visibility:hidden;}</style><a href='"+ulnk+"'><img style='width:250px; height:250px;' src='"+uimg+"'></a><h3 id='title'>"+utitle+"</h3><h4 id='artist'>"+uartist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
+document.getElementById("user").innerHTML = (array[bonusnum][5]);
+          document.close();
+         }
+
+      </script>
+      <img src ="http://cdn.onlinewebfonts.com/svg/img_569204.png" id="button" class="fa-archive">
+      <h2 id="user"></h2>
+      <i class="fa fa-calendar" onclick="date()" aria-hidden="true"></i>
+      <div class="album" id="randdemo" style='visibility: visible;'>
+        <script>getRandomTitle();</script>
+      </div>
+      <div id="alldemo" style="display: none; position: fixed;
+         left: 50%;
+         top:50%;
+         /* bring your own prefixes */
+         transform: translate(-50%, -50%); overflow-y: scroll; height: 250px !important;">
+         <script class="potato">getAllTitle();</script>
+      </div>
+      <script>
+         $("#button").click(function(){
+           $("#alldemo").toggle();
+           $("#randdemo").toggle();
+         });
+      </script>
+      <script>
+         window.addEventListener("keydown", checkKeyPressed, false);
+         
+         function checkKeyPressed(evt) {
+             if (evt.keyCode == "13") {
+                    window.location.reload();
+             }
+         }
+      </script>
+   </body>
+</html>
