@@ -68,11 +68,53 @@
          top: 10px;
          left: 10px;
          }
+         #date{
+         font-size: 30px;
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         margin-top: -250px;
+         /* bring your own prefixes */
+         transform: translate(-50%, -50%);
+         color: white;
+         background-color: purple;
+         padding: 10px;
+         border-radius: 5px;
+          -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+         }
          #user{
-            position: fixed;
-            left: 60px;
-            top: 18px;
             font-size: 18px;
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         margin-top: 230px;
+         /* bring your own prefixes */
+         transform: translate(-50%, -50%);
+         }
+         #done{
+         font-size: 25px;
+          -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+         position: relative;
+         top: -35px;
+         color: limegreen;
+         text-align: center !important;
+         }
+               .sub{
+            font-size: 18px;
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         margin-top: 200px;
+         /* bring your own prefixes */
+         transform: translate(-50%, -50%);
          }
          #title{
             text-align: center;
@@ -118,33 +160,110 @@
          /* bring your own prefixes */
          transform: translate(-50%, -50%);
          }
-        body{
+        /*body{
            background-image: url("icon.jpg");
-         }
+         }*/
          /* Modal Content */
          /* Add Animation */
+         #calendar{
+            position: fixed;
+         top: 50%;
+         left: 50%;
+         /* bring your own prefixes */
+         transform: translate(-50%, -50%);
+         text-align: center;
+         font-size: 30px;
+         border: none;
+         }
       </style>
    </head>
-   <body>
+   <body onload="date()">
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
       <script>
+
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
+const dateObj = new Date();
+
+var day = dateObj.getUTCDate();
+if (day <10) {day = "0"+day;}
+
+var month = dateObj.getMonth()+1;
+if (month <10) {month = "0"+month;}
+
+var year = dateObj.getUTCFullYear();
+
+var newdate =  monthNames[dateObj.getMonth()] + " " + day + ", " + year;
+var newcalendardate = year+"-"+month+"-"+day;
+
+function date(){
+document.getElementById("date").innerHTML = (newdate);
+document.getElementById("calendar").innerHTML = ("<input id='chosenDate' type='date' value='"+newcalendardate+"' min='2022-07-10' max='"+newcalendardate+"' name='birthday'><br><br><button id='submit' onclick='changeDate()'>Submit</button>");
+}
+var aha = "";
+var formalmonth = "";
+var annoying;
+var formalaha = "";
+
          // place your images in this array
 
-         var array= [
-         ['GINGER', 'BROCKHAMPTON', 'https://open.spotify.com/track/1Uo7reO6I2yQ1q36ZPuNf7', 'https://i.scdn.co/image/ab67616d0000b27346f07fa4f28bf824840ddacb', '186', 'example'],
-         ['SWAMP', 'BROCKHAMPTON', 'https://open.spotify.com/track/6MTA4AwgmjVASTXpBEwvn8', 'https://i.scdn.co/image/ab67616d0000b2737d15fb20303a589acc1ab98b', '186', 'example2'],
+         var fullarray= [
+         ['SWAMP', 'BROCKHAMPTON', 'https://open.spotify.com/track/6MTA4AwgmjVASTXpBEwvn8', 'https://i.scdn.co/image/ab67616d0000b2737d15fb20303a589acc1ab98b', 'July 10, 2022', 'mike'],
+         ['GINGER', 'BROCKHAMPTON', 'https://open.spotify.com/track/1Uo7reO6I2yQ1q36ZPuNf7', 'https://i.scdn.co/image/ab67616d0000b27346f07fa4f28bf824840ddacb', 'July 10, 2022', 'jim'],
+         ['TONYA', 'BROCKHAMPTON', 'https://open.spotify.com/track/0QV83q2vzzOM4uODVyXf7i', 'https://i.scdn.co/image/ab67616d0000b273de91214392394303e66d1cb6', 'July 10, 2022', 'pam'],
+         ['Wings', 'Mac Miller', 'https://open.spotify.com/track/16umSNZfofRpDqTvf8DIAo', 'https://i.scdn.co/image/ab67616d0000b273175c577a61aa13d4fb4b6534', 'July 11, 2022', 'jeff'],
+         ['Avian', 'Mac Miller', 'https://open.spotify.com/track/1NXoydcTFSIJ1ikmFEXmDc', 'https://i.scdn.co/image/ab67616d0000b273d4300bedba646965fa7e1953', 'July 11, 2022', 'britta'],
+         ['Woods', 'Mac Miller', 'https://open.spotify.com/track/3Qa944OTMZkg8DHjET8JQv', 'https://i.scdn.co/image/ab67616d0000b27326b7dd89810cc1a40ada642c', 'July 11, 2022', 'abed'],
          ]
 
-         var num = Math.floor( Math.random() * array.length );
+         var array = [];
+for(var z = 0; z < fullarray.length; z++){
+if(newdate == fullarray[z][4]){array.push(fullarray[z]);}
+}
+
+       array = array.sort();
+
+        // var num = Math.floor( Math.random() * array.length );
+        var num = 0;
          
           var title = array[num][0];
           var artist = array[num][1];
           var lnk = array[num][2];
-          var img = array[num][3];     
+          var img = array[num][3]; 
+
+function changeDate(){
+ aha = document.getElementById("chosenDate").value;
+ annoying = aha.substring(5, 7)-1;
+ formalmonth = monthNames[annoying];
+ formalaha = formalmonth + " " + aha.substring(8, 11)+", "+ aha.substring(0, 4);
+
+array = [];
+for(var y = 0; y < fullarray.length; y++){
+if(formalaha == fullarray[y][4]){array.push(fullarray[y]);}
+}
+array = array.sort();
+
+num = 0;
+         
+title = array[num][0];
+artist = array[num][1];
+lnk = array[num][2];
+img = array[num][3]; 
+
+document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:250px; height:250px;' src='"+img+"'></a><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
+            document.getElementById("user").innerHTML = (array[num][5]);
+
+$("#randdemo").toggle();
+$(".sub").toggle();
+$("#user").toggle();
+$("#calendar").toggle();
+}    
          
          function getRandomTitle() {
          	document.write("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:250px; height:250px;' src='"+img+"'></a><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
@@ -154,7 +273,7 @@
 bonusnum = num;
           function up() {
              bonusnum = bonusnum -1;
-             if (bonusnum < 0){bonusnum = array.length-1;}
+             if (bonusnum < 0){bonusnum = 0;}
           var btitle = array[bonusnum][0];
           var bartist = array[bonusnum][1];
           var blnk = array[bonusnum][2];
@@ -166,35 +285,42 @@ document.getElementById("user").innerHTML = (array[bonusnum][5]);
 
                   function down() {
              bonusnum = bonusnum + 1;
-             if (bonusnum > array.length-1){bonusnum = 0;}
+             if (bonusnum > array.length-1){
+               bonusnum = array.length;
+               document.getElementById("randdemo").innerHTML = ("<span id = 'done'>all caught up!</span><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
+               document.getElementById("user").innerHTML = ("");
+
+             }
+             else{
           var utitle = array[bonusnum][0];
           var uartist = array[bonusnum][1];
           var ulnk = array[bonusnum][2];
           var uimg = array[bonusnum][3];
 document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+ulnk+");} .im{visibility:hidden;}</style><a href='"+ulnk+"'><img style='width:250px; height:250px;' src='"+uimg+"'></a><h3 id='title'>"+utitle+"</h3><h4 id='artist'>"+uartist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
 document.getElementById("user").innerHTML = (array[bonusnum][5]);
+}
           document.close();
          }
 
       </script>
-      <img src ="http://cdn.onlinewebfonts.com/svg/img_569204.png" id="button" class="fa-archive">
+   <!--   <img src ="http://cdn.onlinewebfonts.com/svg/img_569204.png" id="button" class="fa-archive">-->
+   <h5 id="date"></h5>
+      <h5 class="sub">SUBMITTED BY:</h5>
       <h2 id="user"></h2>
-      <i class="fa fa-calendar" onclick="date()" aria-hidden="true"></i>
+      <!--<i class="fa fa-calendar" onclick="date()" aria-hidden="true"></i>-->
       <div class="album" id="randdemo" style='visibility: visible;'>
         <script>getRandomTitle();</script>
       </div>
-      <div id="alldemo" style="display: none; position: fixed;
-         left: 50%;
-         top:50%;
-         /* bring your own prefixes */
-         transform: translate(-50%, -50%); overflow-y: scroll; height: 250px !important;">
-         <script class="potato">getAllTitle();</script>
+      <div id="calendar" style="display: none;">
       </div>
       <script>
-         $("#button").click(function(){
-           $("#alldemo").toggle();
-           $("#randdemo").toggle();
-         });
+      $('#date').click(function() {
+            $("#randdemo").toggle();
+            $(".sub").toggle();
+            $("#user").toggle();
+            $("#calendar").toggle();
+        });
+</script>
       </script>
       <script>
          window.addEventListener("keydown", checkKeyPressed, false);
