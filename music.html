@@ -256,6 +256,7 @@ artist = array[num][1];
 lnk = array[num][2];
 img = array[num][3]; 
 
+document.getElementById("date").innerHTML = (formalaha);
 document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:250px; height:250px;' src='"+img+"'></a><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
             document.getElementById("user").innerHTML = (array[num][5]);
 
