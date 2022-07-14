@@ -165,14 +165,13 @@
          }*/
          /* Modal Content */
          /* Add Animation */
-         #calendar{
-            position: fixed;
+         #datepicker{
+         position: fixed;
          top: 50%;
          left: 50%;
          /* bring your own prefixes */
          transform: translate(-50%, -50%);
          text-align: center;
-         font-size: 30px;
          border: none;
          }
       </style>
@@ -183,6 +182,9 @@
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
       <script>
 
 const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -204,7 +206,6 @@ var newcalendardate = year+"-"+month+"-"+day;
 
 function date(){
 document.getElementById("date").innerHTML = (newdate);
-document.getElementById("calendar").innerHTML = ("<input id='chosenDate' type='date' value='"+newcalendardate+"' min='2022-07-12' max='"+newcalendardate+"' name='birthday'><br><br><button id='submit' onclick='changeDate()'>Submit</button>");
 }
 var aha = "";
 var formalmonth = "";
@@ -214,7 +215,7 @@ var formalaha = "";
          // place your images in this array
 
          var fullarray= [
-['Fire', 'Waxahatchee', 'https://open.spotify.com/track/2lBEWXP11gpEySIXgA5ALH', 'https://i.scdn.co/image/ab67616d0000b2737a85df5e8a9276793d1373e1', 'July 14, 2022', 'Emily Sancomb'],
+         ['Fire', 'Waxahatchee', 'https://open.spotify.com/track/2lBEWXP11gpEySIXgA5ALH', 'https://i.scdn.co/image/ab67616d0000b2737a85df5e8a9276793d1373e1', 'July 14, 2022', 'Emily Sancomb'],
 ['Elegy', 'Theo Kandel', 'https://open.spotify.com/track/4D5M3terA4yUIQ9s74wTgh', 'https://i.scdn.co/image/ab67616d0000b2739370f0998eb0baa16b876f72', 'July 12, 2022', 'Jeremy Jarecki'],
 ['Harvest Moon', 'Poolside', 'https://open.spotify.com/track/35U4PXL3W3XIkAjEUdhr36', 'https://i.scdn.co/image/ab67616d0000b273328cc33e3e77b9d3c5313125', 'July 13, 2022', 'Helen Killian'],
 ['Walden Pond', 'Atta Boy', 'https://open.spotify.com/track/6fitB3zIBx8UybcuZg2ADv', 'https://i.scdn.co/image/ab67616d0000b273dff85da64d2bb4152516169c', 'July 12, 2022', 'Emily Sancomb'],
@@ -241,7 +242,7 @@ var formalaha = "";
 ["Heart's Content', 'Brandi Carlile', 'https://open.spotify.com/track/0pegFWSUOTiG0sLVEfxtvA', 'https://i.scdn.co/image/ab67616d0000b273f5aac98410fb9e64e29827d4', 'July 13, 2022', 'Sarah von Doepp"],
 ["Ain't No Mountain High Enough", 'Marvin Gaye', 'https://open.spotify.com/track/7tqhbajSfrz2F7E1Z75ASX', 'https://i.scdn.co/image/ab67616d0000b2739173e50e99bdea2400222f02', 'July 14, 2022', 'Andy Bainton'],
 ['I Heard It Through The Grapevine', 'Gladys Knight & The Pips', 'https://open.spotify.com/track/1aRrJewQmqU3wMUf86VVc6', 'https://i.scdn.co/image/ab67616d0000b2735ea11ccfbe6b3e3fe31b9dd6', 'July 12, 2022', 'Andy Baiton'],
-         ]
+         ];
 
          var array = [];
 for(var z = 0; z < fullarray.length; z++){
@@ -252,40 +253,11 @@ if(newdate == fullarray[z][4]){array.push(fullarray[z]);}
 
         // var num = Math.floor( Math.random() * array.length );
         var num = 0;
-         
           var title = array[num][0];
           var artist = array[num][1];
           var lnk = array[num][2];
           var img = array[num][3]; 
-
-function changeDate(){
- aha = document.getElementById("chosenDate").value;
- annoying = aha.substring(5, 7)-1;
- formalmonth = monthNames[annoying];
- formalaha = formalmonth + " " + aha.substring(8, 11)+", "+ aha.substring(0, 4);
-
-array = [];
-for(var y = 0; y < fullarray.length; y++){
-if(formalaha == fullarray[y][4]){array.push(fullarray[y]);}
-}
-array = array.sort();
-
-num = 0;
-         
-title = array[num][0];
-artist = array[num][1];
-lnk = array[num][2];
-img = array[num][3]; 
-
-document.getElementById("date").innerHTML = (formalaha);
-document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:250px; height:250px;' src='"+img+"'></a><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
-            document.getElementById("user").innerHTML = (array[num][5]);
-
-$("#randdemo").toggle();
-$(".sub").toggle();
-$("#user").toggle();
-$("#calendar").toggle();
-}    
+  
          
          function getRandomTitle() {
          	document.write("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:250px; height:250px;' src='"+img+"'></a><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
@@ -335,12 +307,50 @@ document.getElementById("user").innerHTML = (array[bonusnum][5]);
       </div>
       <div id="calendar" style="display: none;">
       </div>
+      <div id="datepicker" style="display: none;"></div>
+ 
+<script>
+    $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+    $("#datepicker").datepicker({
+   onSelect: function(dateText, inst) { 
+      var dateAsString = dateText;
+      var ayo = dateAsString.substring(0,2)-1;
+      var ayoMonth = monthNames[ayo];
+      var formalayo = ayoMonth + " " + dateAsString.substring(3,5) + ", 20" + dateAsString.substring(8,13);
+      document.getElementById("date").innerHTML = (formalayo);
+
+      array = [];
+for(var x = 0; x < fullarray.length; x++){
+if(formalayo == fullarray[x][4]){array.push(fullarray[x]);}
+}
+array = array.sort();
+
+num = 0;
+bonusnum = 0;         
+title = array[num][0];
+artist = array[num][1];
+lnk = array[num][2];
+img = array[num][3]; 
+
+document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:250px; height:250px;' src='"+img+"'></a><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
+            document.getElementById("user").innerHTML = (array[num][5]);
+
+$("#randdemo").toggle();
+$(".sub").toggle();
+$("#user").toggle();
+$("#datepicker").toggle();
+  
+   }
+});
+</script> 
       <script>
       $('#date').click(function() {
             $("#randdemo").toggle();
             $(".sub").toggle();
             $("#user").toggle();
-            $("#calendar").toggle();
+            $("#datepicker").toggle();
         });
 </script>
       </script>
