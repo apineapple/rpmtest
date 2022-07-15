@@ -107,6 +107,17 @@
          color: limegreen;
          text-align: center !important;
          }
+         #none{
+         font-size: 25px;
+          -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+         position: relative;
+         top: -35px;
+         text-align: center !important;
+         }
                .sub{
             font-size: 18px;
          position: fixed;
@@ -191,15 +202,19 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
 
+
 const dateObj = new Date();
 
-var day = dateObj.getUTCDate()-1;
+var zone = new Date().toLocaleTimeString('en-us',{timeZoneName:'short'}).split(' ')[2]
+//make by users time zone
+
+var day = dateObj.getDate();
 if (day <10) {day = "0"+day;}
 
 var month = dateObj.getMonth()+1;
 if (month <10) {month = "0"+month;}
 
-var year = dateObj.getUTCFullYear();
+var year = dateObj.getFullYear();
 
 var newdate =  monthNames[dateObj.getMonth()] + " " + day + ", " + year;
 var newcalendardate = year+"-"+month+"-"+day;
@@ -253,15 +268,21 @@ if(newdate == fullarray[z][4]){array.push(fullarray[z]);}
 
         // var num = Math.floor( Math.random() * array.length );
         var num = 0;
-          var title = array[num][0];
-          var artist = array[num][1];
-          var lnk = array[num][2];
-          var img = array[num][3]; 
+
   
          
          function getRandomTitle() {
+            if (typeof array[num] === 'undefined'){
+               document.write("<span id = 'none'>no songs today</span>");
+            }
+            else{
+         var title = array[num][0];
+          var artist = array[num][1];
+          var lnk = array[num][2];
+          var img = array[num][3]; 
          	document.write("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:250px; height:250px;' src='"+img+"'></a><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
             document.getElementById("user").innerHTML = (array[num][5]);
+         }
           document.close();
          }
 bonusnum = num;
@@ -311,8 +332,8 @@ document.getElementById("user").innerHTML = (array[bonusnum][5]);
  
 <script>
     $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
+    $( "#datepicker" ).datepicker(/*{put minmax here}*/);
+  });
     $("#datepicker").datepicker({
    onSelect: function(dateText, inst) { 
       var dateAsString = dateText;
@@ -328,14 +349,22 @@ if(formalayo == fullarray[x][4]){array.push(fullarray[x]);}
 array = array.sort();
 
 num = 0;
-bonusnum = 0;         
-title = array[num][0];
+bonusnum = 0;
+
+if (typeof array[num] === 'undefined'){
+   document.getElementById("randdemo").innerHTML = ("<span id = 'none'>no songs today</span>");
+   document.getElementById("user").innerHTML = ("");
+}
+
+
+else{
+   title = array[num][0];
 artist = array[num][1];
 lnk = array[num][2];
 img = array[num][3]; 
-
 document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:250px; height:250px;' src='"+img+"'></a><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
             document.getElementById("user").innerHTML = (array[num][5]);
+}
 
 $("#randdemo").toggle();
 $(".sub").toggle();
