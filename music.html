@@ -193,7 +193,7 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
 
 const dateObj = new Date();
 
-var day = dateObj.getUTCDate();
+var day = dateObj.getUTCDate()-1;
 if (day <10) {day = "0"+day;}
 
 var month = dateObj.getMonth()+1;
