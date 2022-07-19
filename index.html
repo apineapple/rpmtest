@@ -70,13 +70,7 @@
          }
          #date{
          font-size: 20px;
-         position: fixed;
-         top: 50%;
-         left: 50%;
-         margin-top: -250px;
-         /* bring your own prefixes */
-         transform: translate(-50%, -50%);
-         color: purple;
+         color: #3a4797;
          padding: 10px;
          border-radius: 200px;
           -moz-user-select: -moz-none;
@@ -84,10 +78,11 @@
    -webkit-user-select: none;
    -ms-user-select: none;
    user-select: none;
-   border: purple 2.5px solid;
+   border: #3a4797 2.5px solid;
+   display: inline;
          }
          #date.green{
-            background-color: purple;
+            background-color: #3a4797;
             color: white;
          }
          #user{
@@ -189,6 +184,21 @@
          text-align: center;
          border: none;
          }
+         #header{
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         margin-top: -250px;
+         /* bring your own prefixes */
+         transform: translate(-50%, -50%);
+         }
+         #logo{
+            display: inline;
+            height: 48.5px;
+            width: auto;
+            margin-top: -5px;
+            margin-right: 10px;
+         }
       </style>
    </head>
    <body onload="date()">
@@ -261,7 +271,25 @@ var formalaha = "";
 ["Heart's Content', 'Brandi Carlile', 'https://open.spotify.com/track/0pegFWSUOTiG0sLVEfxtvA', 'https://i.scdn.co/image/ab67616d0000b273f5aac98410fb9e64e29827d4', 'July 13, 2022', 'Sarah von Doepp"],
 ["Ain't No Mountain High Enough", 'Marvin Gaye', 'https://open.spotify.com/track/7tqhbajSfrz2F7E1Z75ASX', 'https://i.scdn.co/image/ab67616d0000b2739173e50e99bdea2400222f02', 'July 14, 2022', 'Andy Bainton'],
 ['I Heard It Through The Grapevine', 'Gladys Knight & The Pips', 'https://open.spotify.com/track/1aRrJewQmqU3wMUf86VVc6', 'https://i.scdn.co/image/ab67616d0000b2735ea11ccfbe6b3e3fe31b9dd6', 'July 12, 2022', 'Andy Baiton'],
-["I'm Not Getting Excited", 'The Beths', 'https://open.spotify.com/track/3pwjsxeH4rQj347LHpsf7U', 'https://i.scdn.co/image/ab67616d0000b273c2f4ca510206a0274479a98b', 'July 18, 2022', 'Jasper Jarecki'],['Fat Lip', 'Sum 41', 'https://open.spotify.com/track/4KacUpvbA3Mfo05gttTjhN', 'https://i.scdn.co/image/ab67616d0000b2739a482180e6a306229bff49dc', 'July 18, 2022', 'Otis the Dog'],['Dune', 'Kikagaku Moyo', 'https://open.spotify.com/track/45qGrOnjFJsgmzjRv5LA2T', 'https://i.scdn.co/image/ab67616d0000b273a938f8d61319e7ca724ddd8c', 'July 18, 2022', 'Demery Coppolla'],['The Start of Something', 'Voxtrot', 'https://open.spotify.com/track/30fQvBnDR8jLdN0SFcsFos', 'https://i.scdn.co/image/ab67616d0000b273170683264052615fd667788d', 'July 18, 2022', 'Bobby Lussier'],['Bathroom Light', 'Mt. Joy', 'https://open.spotify.com/track/71glNHT4FultOqlau4zrFf', 'https://i.scdn.co/image/ab67616d0000b27334b591c6b39fd89b03909ac5', 'July 18, 2022', 'Emily Sancomb'],['Talk About Suffering', 'Ricky Skaggs', 'https://open.spotify.com/track/7rEamPIhYubI3DlXAKnYpR', 'https://i.scdn.co/image/ab67616d0000b273905a0410c30a46a2299bd7cb', 'July 18, 2022', 'Sam Bartusek'],['Baltimore', 'Nina Simone', 'https://open.spotify.com/track/39CyGKIFqMzSuynOR8uilD', 'https://i.scdn.co/image/ab67616d0000b273a3e94aa06432d0fa06e54f76', 'July 18, 2022', 'Andy Bainton'],['Good Thoughts, Bad Thoughts', 'Funkadelic', 'https://open.spotify.com/track/2jIMUFk9VGIOUYTWyx2pC5', 'https://i.scdn.co/image/ab67616d0000b27381e659891374fac834ef9011', 'July 18, 2022', "Helen Killian"],['Cheap Cocaine', 'Willi Carlisle', 'https://open.spotify.com/track/217rrEULoEhwza1PIJKT71', 'https://i.scdn.co/image/ab67616d0000b273eb446d8914af2509c1e1bad9', 'July 18, 2022', 'Tommy Maron'],['Tennessee Whiskey', 'Chris Stapleton', 'https://open.spotify.com/track/3fqwjXwUGN6vbzIwvyFMhx', 'https://i.scdn.co/image/ab67616d0000b273540fc1d083eac5bcff8dad21', 'July 18, 2022', 'Sarah von Doepp'],
+["I'm Not Getting Excited", 'The Beths', 'https://open.spotify.com/track/3pwjsxeH4rQj347LHpsf7U', 'https://i.scdn.co/image/ab67616d0000b273c2f4ca510206a0274479a98b', 'July 18, 2022', 'Jasper Jarecki'],
+['Fat Lip', 'Sum 41', 'https://open.spotify.com/track/4KacUpvbA3Mfo05gttTjhN', 'https://i.scdn.co/image/ab67616d0000b2739a482180e6a306229bff49dc', 'July 18, 2022', 'Otis the Dog'],
+['Dune', 'Kikagaku Moyo', 'https://open.spotify.com/track/45qGrOnjFJsgmzjRv5LA2T', 'https://i.scdn.co/image/ab67616d0000b273a938f8d61319e7ca724ddd8c', 'July 18, 2022', 'Demery Coppolla'],
+['The Start of Something', 'Voxtrot', 'https://open.spotify.com/track/30fQvBnDR8jLdN0SFcsFos', 'https://i.scdn.co/image/ab67616d0000b273170683264052615fd667788d', 'July 18, 2022', 'Bobby Lussier'],
+['Bathroom Light', 'Mt. Joy', 'https://open.spotify.com/track/71glNHT4FultOqlau4zrFf', 'https://i.scdn.co/image/ab67616d0000b27334b591c6b39fd89b03909ac5', 'July 18, 2022', 'Emily Sancomb'],
+['Talk About Suffering', 'Ricky Skaggs', 'https://open.spotify.com/track/7rEamPIhYubI3DlXAKnYpR', 'https://i.scdn.co/image/ab67616d0000b273905a0410c30a46a2299bd7cb', 'July 18, 2022', 'Sam Bartusek'],
+['Baltimore', 'Nina Simone', 'https://open.spotify.com/track/39CyGKIFqMzSuynOR8uilD', 'https://i.scdn.co/image/ab67616d0000b273a3e94aa06432d0fa06e54f76', 'July 18, 2022', 'Andy Bainton'],
+['Good Thoughts, Bad Thoughts', 'Funkadelic', 'https://open.spotify.com/track/2jIMUFk9VGIOUYTWyx2pC5', 'https://i.scdn.co/image/ab67616d0000b27381e659891374fac834ef9011', 'July 18, 2022', "Helen Killian"],
+['Cheap Cocaine', 'Willi Carlisle', 'https://open.spotify.com/track/217rrEULoEhwza1PIJKT71', 'https://i.scdn.co/image/ab67616d0000b273eb446d8914af2509c1e1bad9', 'July 18, 2022', 'Tommy Maron'],
+['Tennessee Whiskey', 'Chris Stapleton', 'https://open.spotify.com/track/3fqwjXwUGN6vbzIwvyFMhx', 'https://i.scdn.co/image/ab67616d0000b273540fc1d083eac5bcff8dad21', 'July 18, 2022', 'Sarah von Doepp'],
+["2 Days", "Antarctigo Vespucci", "https://open.spotify.com/track/2048QksTiQWqfQ8QYFrccb", "https://i.scdn.co/image/ab67616d0000b2735da5ddf18b9527b5f669a9ad", "July 19, 2022", "Bobby Lussier"],
+["Beeswing", "Richard Thompson", "https://open.spotify.com/track/4j8z75abjq2GCA1U7AaPRj", "https://i.scdn.co/image/ab67616d0000b273dbc84faf90f1ced8e6bf150f", "July 19, 2022", "Tommy Maron"],
+["Eternal Sunshine", "Lou Val", "https://open.spotify.com/track/5FChOu6NfR5w7YLgDmXXnC", "https://i.scdn.co/image/ab67616d0000b273b944f28fbc417dc9dcc629a7", "July 19, 2022", "Sarah von Doepp"],
+["Fall Apart Again", "Brandi Carlile", "https://open.spotify.com/track/3noYdMvieR1yokC455dC4V", "https://i.scdn.co/image/ab67616d0000b2730da280373953f2db2ac204e7", "July 19, 2022", "Jasper Jarecki"],
+["Head Alone", "Julia Jacklin", "https://open.spotify.com/track/1K7xX7qHXeIMwfTtxieAxH", "https://i.scdn.co/image/ab67616d0000b2732fca2b6f420ec6044327ec2d", "July 19, 2022", "Demery Coppolla"],
+["If You Can Want", "Perth County Conspiracy", "https://open.spotify.com/track/6RRAyZxAyd3B4qPdvcW8K6", "https://i.scdn.co/image/ab67616d0000b27333e92a5a6a233bce774e9924", "July 19, 2022", "Helen Killian"],
+["Matilda", "Elizabeth Moen", "https://open.spotify.com/track/1ZEcBjSbNIitaKAwdcBEdx", "https://i.scdn.co/image/ab67616d0000b2736091bdddd62d01ffcace9863", "July 19, 2022", "Emily Sancomb"],
+["Perfect Day", "Hoku", "https://open.spotify.com/track/4pMyfWdA0eo3JY5RqMotbw", "https://i.scdn.co/image/ab67616d0000b273c2e1019d19d980b68e4ff27a", "July 19, 2022", "Sam Bartusek"],
+["The Middle", "Jimmy Eat World", "https://open.spotify.com/track/6GG73Jik4jUlQCkKg9JuGO", "https://i.scdn.co/image/ab67616d0000b27395d1d98c5176e4f982bd73d6", "July 19, 2022", "Otis the Dog"]
          ];
 
          var array = [];
@@ -324,7 +352,7 @@ document.getElementById("user").innerHTML = (array[bonusnum][5]);
 
       </script>
    <!--   <img src ="http://cdn.onlinewebfonts.com/svg/img_569204.png" id="button" class="fa-archive">-->
-   <h5 id="date"></h5>
+   <div id="header"><img id="logo" src="logo.png"><h5 id="date"></h5></div>
       <h5 class="sub">SUBMITTED BY:</h5>
       <h2 id="user"></h2>
       <!--<i class="fa fa-calendar" onclick="date()" aria-hidden="true"></i>-->
@@ -370,8 +398,7 @@ img = array[num][3];
 document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:250px; height:250px;' src='"+img+"'></a><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
             document.getElementById("user").innerHTML = (array[num][5]);
 }
-$("#date").css("color", "purple");
-$("#date").css("background-color", "white");
+$("#date").toggleClass("green");
 $("#randdemo").toggle();
 $(".sub").toggle();
 $("#user").toggle();
