@@ -70,21 +70,21 @@
          }
          #date{
          font-size: 20px;
-         color: #3a4797;
-         padding: 10px;
-         border-radius: 200px;
           -moz-user-select: -moz-none;
    -khtml-user-select: none;
    -webkit-user-select: none;
    -ms-user-select: none;
    user-select: none;
-   border: #3a4797 2.5px solid;
    display: inline;
+   line-height: 50px;
    margin-left: 5px;
          }
-         #date.green{
+         #header.green{
             background-color: #3a4797;
             color: white;
+         }
+         #header.green img{
+            filter: brightness(0) invert(1);;
          }
          #user{
             font-size: 18px;
@@ -192,10 +192,16 @@
          margin-top: -250px;
          /* bring your own prefixes */
          transform: translate(-50%, -50%);
+            border: #3a4797 2.5px solid;
+                     padding-left: 10px;
+                     padding-right: 10px;
+         border-radius: 200px;
+         color: #3a4797;
          }
          #logo{
             display: inline;
-            height: 48.5px;
+            line-height: 50px;
+            height: 32px;
             width: auto;
             margin-top: -5px;
             margin-right: 5px;
@@ -399,7 +405,7 @@ img = array[num][3];
 document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:250px; height:250px;' src='"+img+"'></a><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
             document.getElementById("user").innerHTML = (array[num][5]);
 }
-$("#date").toggleClass("green");
+$("#header").toggleClass("green");
 $("#randdemo").toggle();
 $(".sub").toggle();
 $("#user").toggle();
@@ -409,7 +415,7 @@ $("#datepicker").toggle();
 });
 </script> 
       <script>
-      $('#date').click(function() {
+      $('#header').click(function() {
          $(this).toggleClass("green");
             $("#randdemo").toggle();
             $(".sub").toggle();
