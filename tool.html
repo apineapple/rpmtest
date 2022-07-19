@@ -130,26 +130,19 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
       <script>
          // place your images in this array
-var now = new Date();
-var start = new Date(now.getFullYear(), 0, 0);
-var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
-var oneDay = 1000 * 60 * 60 * 24;
-var day = Math.floor(diff / oneDay);
-var rando = 0;
-var rimg ="";
-var rlnk = "";
 
          var array = [
-         ["swamp", "brockhampton"],
-         ["ginger", "brockhampton"]
+["2 Days", "Antarctigo Vespucci", "Bobby Lussier"],
+["If You Can Wait", "Perth County Conspiracy", "Helen Killian"],
+["Eternal Sunshine", "Lou Val", "Sarah von Doepp"],
+["Fall Apart Again", "Brandi Carlile", "Jasper Jarecki"],
+["Matilda", "Elizabeth Moen", "Emily Sancomb"],
+["The Middle", "Jimmy Eat World", "Otis the Dog"],
+["Beeswing", "Richard Thompson", "Tommy Maron"],
+["Perfect Day", "Hoku", "Sam Bartusek"],
+["Head Alone", "Julia Jacklin", "Demery Coppolla"],
          ];
-
-      var cy = day/array.length;
-      var cycle = Math.floor(cy);
-      var num = array.length-1;
-      if (day <= array.length){
-         num = day-1;
-      }  
+         array = array.sort();
          //num = images.length-1; // debug
          //num = Math.floor( Math.random() * images.length );
          
@@ -157,7 +150,7 @@ var rlnk = "";
         //  var lnk = url [ num ];
           
 
-      var access = "BQDNj7NR_nJ0kAZPvNJIfa2KOtuR_Z1NSotCqaS_SNxsOf9k6hu0uPhtScjDAvFcopQ437X7gr6001qClbEjvH3Vi_WArxwSlC5tES3sPMVHyu7rTK1El9xSX6hamgOSsphRQP7O49H-fA7QsUONxK2FTLShmzENP1-eu7Ettg";
+      var access = "BQDTQ00_O8s96Q6PAfDHUKxmWBfNqXAuCo1g7hoKdZ3ZT8v3ScOzDI9K2-l4flzqxaQRpjSgrM2nWL63-hz4rnLXoHEXK4O2tS5xEnq-7T359kLODJEfGoxkBw5V-J1MfUnhhxG29BLbN6sg7oEcLDcR7nw9U5oE46GYDRt16w";
 
 
 
@@ -167,19 +160,22 @@ var rlnk = "";
       var alnk = "";
       var aname = "";
       var aartist = "";
+      var auser = "";
       var allcontent = "";
       var thiscontent = "";
       var itn = 0;
+      var pleasegoditsmeben = "";
 
-      var now = new Date();
-var start = new Date(now.getFullYear(), 0, 0);
-var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
-var oneDay = 1000 * 60 * 60 * 24;
-var day = Math.floor(diff / oneDay);
-var today = new Date();
-var yyyy = today.getFullYear();
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
 
-var vDay = day +(yyyy-2022)*366;
+const dateObj = new Date();
+var day = dateObj.getUTCDate();
+var year = dateObj.getUTCFullYear();
+
+var newdate =  monthNames[dateObj.getMonth()] + " " + day + ", " + year;
+var finalarray = [];
 
 var allApi = new SpotifyWebApi();
 allApi.setAccessToken(access);
@@ -190,18 +186,20 @@ itemsearch = array[j][0]+" "+array[j][1];
 alloutput = allApi.searchTracks(itemsearch, null, function(err, data){
    if (err) console.error(err);
   else 
+   auser = array[itn][2];
+   console.log(auser);
    raw = data.tracks.items[0];
    aimg = raw.album.images[0].url;
    aname = raw.name;
    aartist = raw.artists[0].name;
    alnk = "https://open.spotify.com/track/"+raw.id;
 
-thiscontent = aname;
-console.log(thiscontent);
-
-allcontent = allcontent+"['"+aname+"', '"+aartist+"', '"+alnk+"', '"+aimg+"', '"+vDay+"'],";
+allcontent = '["'+aname+'", "'+aartist+'", "'+alnk+'", "'+aimg+'", "'+newdate+'", "'+auser+'"]';
+finalarray.push(allcontent);
+finalarray.sort();
+console.log(finalarray);
 itn++;
-document.getElementById("alldemo").innerHTML = allcontent;
+document.getElementById("alldemo").innerHTML = finalarray;
   }); 
 }
          
@@ -224,6 +222,6 @@ document.getElementById("alldemo").innerHTML = allcontent;
    </body>
    <script>
       var bingle = document.getElementById("alldemo").innerHTML;
-      console.log(bingle);
+     // console.log(bingle);
    </script>
 </html>
