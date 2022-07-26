@@ -190,11 +190,10 @@
          top: 50%;
          left: 50%;
          margin-top: -240px;
-         /* bring your own prefixes */
          transform: translate(-50%, -50%);
-            border: #3a4797 2.5px solid;
-                     padding-left: 10px;
-                     padding-right: 10px;
+         border: #3a4797 2.5px solid;
+         padding-left: 10px;
+         padding-right: 10px;
          border-radius: 200px;
          color: #3a4797;
          }
@@ -205,6 +204,30 @@
             width: auto;
             margin-top: -5px;
             margin-right: 5px;
+         }
+         #sortuser{
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         margin-top: -180px;
+         transform: translate(-50%, -50%);
+         font-size: 16px;
+         border: #3a4797 2.5px solid;
+         padding: 5px;
+         border-radius: 200px;
+         color: #3a4797;
+         }
+         #sortuser.toggle{
+            color: white;
+            background-color: #3a4797;
+         }
+         #userlist{
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         display: none;
+         text-align: center;
          }
       </style>
    </head>
@@ -275,9 +298,9 @@ var formalaha = "";
 ['You Can Have the Crown', 'Sturgill Simpson', 'https://open.spotify.com/track/1aSsE0qevtf2YDXmdFOY6b', 'https://i.scdn.co/image/ab67616d0000b273af7cd0dbfde78bc895e007bd', 'July 12, 2022', 'Tommy Maron'],
 ['Daytona Sand', 'Orville Peck', 'https://open.spotify.com/track/5D9fWPC6JwA8SgksEpO0jC', 'https://i.scdn.co/image/ab67616d0000b273778051b03d5d4364a84c12c5', 'July 14, 2022', 'Jeremy Jarecki'],
 ['Come Together', 'Soulive', 'https://open.spotify.com/track/0drwxEKqo43bVdXOMBwxCk', 'https://i.scdn.co/image/ab67616d0000b273e64edde232d25c18c8df5c48', 'July 12, 2022', 'Jasper Jarecki'],
-["Heart's Content', 'Brandi Carlile', 'https://open.spotify.com/track/0pegFWSUOTiG0sLVEfxtvA', 'https://i.scdn.co/image/ab67616d0000b273f5aac98410fb9e64e29827d4', 'July 13, 2022', 'Sarah von Doepp"],
+["Heart's Content", 'Brandi Carlile', 'https://open.spotify.com/track/0pegFWSUOTiG0sLVEfxtvA', 'https://i.scdn.co/image/ab67616d0000b273f5aac98410fb9e64e29827d4', 'July 13, 2022', 'Sarah von Doepp'],
 ["Ain't No Mountain High Enough", 'Marvin Gaye', 'https://open.spotify.com/track/7tqhbajSfrz2F7E1Z75ASX', 'https://i.scdn.co/image/ab67616d0000b2739173e50e99bdea2400222f02', 'July 14, 2022', 'Andy Bainton'],
-['I Heard It Through The Grapevine', 'Gladys Knight & The Pips', 'https://open.spotify.com/track/1aRrJewQmqU3wMUf86VVc6', 'https://i.scdn.co/image/ab67616d0000b2735ea11ccfbe6b3e3fe31b9dd6', 'July 12, 2022', 'Andy Baiton'],
+['I Heard It Through The Grapevine', 'Gladys Knight & The Pips', 'https://open.spotify.com/track/1aRrJewQmqU3wMUf86VVc6', 'https://i.scdn.co/image/ab67616d0000b2735ea11ccfbe6b3e3fe31b9dd6', 'July 12, 2022', 'Andy Bainton'],
 ["I'm Not Getting Excited", 'The Beths', 'https://open.spotify.com/track/3pwjsxeH4rQj347LHpsf7U', 'https://i.scdn.co/image/ab67616d0000b273c2f4ca510206a0274479a98b', 'July 18, 2022', 'Jasper Jarecki'],
 ['Fat Lip', 'Sum 41', 'https://open.spotify.com/track/4KacUpvbA3Mfo05gttTjhN', 'https://i.scdn.co/image/ab67616d0000b2739a482180e6a306229bff49dc', 'July 18, 2022', 'Otis the Dog'],
 ['Dune', 'Kikagaku Moyo', 'https://open.spotify.com/track/45qGrOnjFJsgmzjRv5LA2T', 'https://i.scdn.co/image/ab67616d0000b273a938f8d61319e7ca724ddd8c', 'July 18, 2022', 'Demery Coppolla'],
@@ -404,10 +427,62 @@ document.getElementById("user").innerHTML = (array[bonusnum][5]);
 }
           document.close();
          }
+         function getuserlist(){
+            var userlisting = [];
 
+            for(var w = 0; w < fullarray.length; w++){
+               if (!userlisting.includes(fullarray[w][5]+"</span><br>")) {
+                userlisting.push(fullarray[w][5]+"</span><br>");  
+               }
+            }
+            userlisting.sort();
+            userlisting = userlisting.map(i => "<span id='user"+userlisting.indexOf(i)+"' onclick='thisUser(this.id)'>" + i);
+            const withoutCommas = userlisting.join('');
+            document.getElementById("userlist").innerHTML = (withoutCommas);
+            document.close();
+         }
+var compare_dates = function(date1,date2){
+
+      var d1= new Date(date1[4]);
+     var d2= new Date(date2[4]);
+      if (d1>d2) return 1;
+       else if (d1<d2)  return -1;
+       else return 0;
+    }
+         function thisUser(clicked_id){
+            array = [];
+            for(var v = 0; v < fullarray.length; v++){
+               if (document.getElementById(clicked_id).innerHTML == fullarray[v][5]){
+                  array.push(fullarray[v]);
+                  array[array.length-1][5] = array[array.length-1][5]+" ("+fullarray[v][4]+")";
+               }
+            }
+array = array.sort(compare_dates);
+
+num = 0;
+bonusnum = 0;
+
+title = array[num][0];
+artist = array[num][1];
+lnk = array[num][2];
+img = array[num][3]; 
+document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:250px; height:250px;' src='"+img+"'></a><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
+            document.getElementById("user").innerHTML = (array[num][5]);
+$("#header").toggleClass("green");
+$("#randdemo").toggle();
+$(".sub").toggle();
+$("#user").toggle();
+$("#sortuser").toggle();
+$("#userlist").hide();
+$("#sortuser").removeClass("toggle");
+         }
       </script>
    <!--   <img src ="http://cdn.onlinewebfonts.com/svg/img_569204.png" id="button" class="fa-archive">-->
    <div id="header"><img id="logo" src="logo.png"><h5 id="date"></h5></div>
+   <h5 id="sortuser" style="display: none;">sort by user</h5>
+   <div id="userlist">
+      <script>getuserlist();</script>
+   </div>
       <h5 class="sub">SUBMITTED BY:</h5>
       <h2 id="user"></h2>
       <!--<i class="fa fa-calendar" onclick="date()" aria-hidden="true"></i>-->
@@ -464,11 +539,28 @@ $("#datepicker").toggle();
 </script> 
       <script>
       $('#header').click(function() {
+         if ($(this).hasClass('green')){
+             $("#datepicker").hide();
+             $("#sortuser").hide();
+             $("#randdemo").show();
+            $(".sub").show();
+            $("#user").show();
+             $("#userlist").hide();
+             $("#sortuser").removeClass("toggle");
+         }
+         else{
+            $("#datepicker").show();
+             $("#sortuser").show();
+             $("#randdemo").hide();
+            $(".sub").hide();
+            $("#user").hide();
+         }
          $(this).toggleClass("green");
-            $("#randdemo").toggle();
-            $(".sub").toggle();
-            $("#user").toggle();
+        });
+      $('#sortuser').click(function() {
             $("#datepicker").toggle();
+            $("#userlist").toggle();
+            $(this).toggleClass("toggle");
         });
 </script>
       </script>
