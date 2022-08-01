@@ -115,7 +115,7 @@
    -ms-user-select: none;
    user-select: none;
          position: relative;
-         top: -35px;
+         top: -10px;
          text-align: center !important;
          }
                .sub{
@@ -209,7 +209,7 @@
          position: fixed;
          top: 50%;
          left: 50%;
-         margin-top: -180px;
+         margin-top: -190px;
          transform: translate(-50%, -50%);
          font-size: 16px;
          border: #3a4797 2.5px solid;
@@ -384,7 +384,7 @@ if(newdate == fullarray[z][4]){array.push(fullarray[z]);}
          
          function getRandomTitle() {
             if (typeof array[num] === 'undefined'){
-               document.write("<span id = 'none'>no songs today</span>");
+               document.write("<span id = 'none'>Week 1:</span><h5 onclick='week(this.id)' id='day1' class='week'>July 18, 2022</h5><h5 onclick='week(this.id)' id='day2' class='week'>July 19, 2022</h5><h5 onclick='week(this.id)' id='day3' class='week'>July 20, 2022</h5><h5 onclick='week(this.id)' id='day4' class='week'>July 21, 2022</h5><h5 onclick='week(this.id)' id='day5' class='week'>July 22, 2022</h5><h5 onclick='week(this.id)' id='day6' class='week'>July 23, 2022</h5><h5 onclick='week(this.id)' id='day7' class='week'>July 24, 2022</h5>");
             }
             else{
          var title = array[num][0];
@@ -468,22 +468,50 @@ lnk = array[num][2];
 img = array[num][3]; 
 document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:250px; height:250px;' src='"+img+"'></a><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
             document.getElementById("user").innerHTML = (array[num][5]);
-$("#header").toggleClass("green");
+//$("#header").toggleClass("green");
 $("#randdemo").toggle();
 $(".sub").toggle();
 $("#user").toggle();
-$("#sortuser").toggle();
+//$("#sortuser").toggle();
 $("#userlist").hide();
 $("#sortuser").removeClass("toggle");
          }
+
+
+   function week(clicked_id){
+            array = [];
+            for(var q = 0; q < fullarray.length; q++){
+               if (document.getElementById(clicked_id).innerHTML == fullarray[q][4]){
+                  array.push(fullarray[q]);
+               }
+            }
+array = array.sort();
+
+
+num = 0;
+bonusnum = 0;
+
+title = array[num][0];
+artist = array[num][1];
+lnk = array[num][2];
+img = array[num][3]; 
+document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:250px; height:250px;' src='"+img+"'></a><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
+   document.getElementById("user").innerHTML = (array[num][5]);
+//$("#header").removeClass("green");
+$("#randdemo").show();
+$(".sub").show();
+$("#user").show();
+//$("#sortuser").hide();
+$("#userlist").hide();
+         } 
       </script>
    <!--   <img src ="http://cdn.onlinewebfonts.com/svg/img_569204.png" id="button" class="fa-archive">-->
    <div id="header"><img id="logo" src="logo.png"><h5 id="date"></h5></div>
-   <h5 id="sortuser" style="display: none;">sort by user</h5>
+   <h5 id="sortuser">sort by user</h5>
    <div id="userlist">
       <script>getuserlist();</script>
    </div>
-      <h5 class="sub">SUBMITTED BY:</h5>
+      <h5 class="sub" style="display:none;">SUBMITTED BY:</h5>
       <h2 id="user"></h2>
       <!--<i class="fa fa-calendar" onclick="date()" aria-hidden="true"></i>-->
       <div class="album" id="randdemo" style='visibility: visible;'>
@@ -528,7 +556,7 @@ img = array[num][3];
 document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:250px; height:250px;' src='"+img+"'></a><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
             document.getElementById("user").innerHTML = (array[num][5]);
 }
-$("#header").toggleClass("green");
+//$("#header").toggleClass("green");
 $("#randdemo").toggle();
 $(".sub").toggle();
 $("#user").toggle();
@@ -540,7 +568,7 @@ $("#sortuser").hide();
 </script> 
       <script>
       $('#header').click(function() {
-         if ($(this).hasClass('green')){
+         /*if ($(this).hasClass('green')){
              $("#datepicker").hide();
              $("#sortuser").hide();
              $("#randdemo").show();
@@ -556,12 +584,22 @@ $("#sortuser").hide();
             $(".sub").hide();
             $("#user").hide();
          }
-         $(this).toggleClass("green");
+         $(this).toggleClass("green");*/
+          document.getElementById("randdemo").innerHTML = ("<span id = 'none'>Week 1:</span><h5 onclick='week(this.id)' id='day1' class='week'>July 18, 2022</h5><h5 onclick='week(this.id)' id='day2' class='week'>July 19, 2022</h5><h5 onclick='week(this.id)' id='day3' class='week'>July 20, 2022</h5><h5 onclick='week(this.id)' id='day4' class='week'>July 21, 2022</h5><h5 onclick='week(this.id)' id='day5' class='week'>July 22, 2022</h5><h5 onclick='week(this.id)' id='day6' class='week'>July 23, 2022</h5><h5 onclick='week(this.id)' id='day7' class='week'>July 24, 2022</h5>");
+           $(".sub").hide();
+            $("#user").hide();
+            $("#sortuser").removeClass("toggle");
+            $("#randdemo").show();
+            $("#userlist").hide();
+
         });
       $('#sortuser').click(function() {
-            $("#datepicker").toggle();
+         //   $("#datepicker").toggle();
             $("#userlist").toggle();
             $(this).toggleClass("toggle");
+            $("#randdemo").toggle();
+            $(".sub").hide();
+            $("#user").hide();
         });
 </script>
       </script>
