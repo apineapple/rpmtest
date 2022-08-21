@@ -31,6 +31,32 @@
          top: -10px;
          right: -10px;
          }
+           .fa-caret-square-o-left{
+          padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 0px;
+         left: 80px;
+         }
+         .fa-caret-square-o-right{
+            padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 70px;
+         left: 80px;
+         }
          .fa-archive {
          width: 40px;
          height: 40px;
@@ -60,6 +86,15 @@
          #header.green img{
             filter: brightness(0) invert(1);;
          }
+         #user{
+            font-size: 18px;
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         margin-top: 230px;
+         /* bring your own prefixes */
+         transform: translate(-50%, -50%);
+         }
          #done{
          font-size: 25px;
           -moz-user-select: -moz-none;
@@ -69,7 +104,7 @@
    user-select: none;
          position: relative;
          top: -35px;
-         color: white;
+         color: limegreen;
          text-align: center !important;
          }
          #none{
@@ -83,8 +118,17 @@
          top: -10px;
          text-align: center !important;
          }
+               .sub{
+            font-size: 18px;
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         margin-top: 200px;
+         /* bring your own prefixes */
+         transform: translate(-50%, -50%);
+         }
          #title{
-            text-align: left;
+            text-align: center;
             font-size: 16px;
             margin-top: 15px;
             max-width: 200px;
@@ -92,27 +136,25 @@
             white-space: nowrap;
             overflow: hidden;
             display: block;
-            margin-left: 10px;
+            margin-left: auto;
             margin-right: auto;
             font-weight: bold;
-            color: white;
          }
          #artist{
             margin-top: -5px;
-            text-align: left;
+            text-align: center;
             font-size: 14px;
             max-width: 200px;
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
             display: block;
-            margin-left: 11px;
+            margin-left: auto;
             margin-right: auto;
-            color: white;
          }
          img{
-         width: 40px;
-         height: auto;
+         width: 93.3333333px;
+         height: 93.333333px;
          border-radius: 5px;
          }
          a{
@@ -143,519 +185,26 @@
          text-align: center;
          border: none;
          }
+         #header{
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         margin-top: -250px;
+         white-space: nowrap;
+         transform: translate(-50%, -50%);
+         border: #3a4797 2.5px solid;
+         padding-left: 10px;
+         padding-right: 10px;
+         border-radius: 200px;
+         color: #3a4797;
+         }
          #logo{
-         position: fixed;
-         top: 50%;
-         left: 50%;
-         margin-top: -306.5px;
-         margin-left: -142px;
-         white-space: nowrap;
-         transform: translate(-50%, -50%);
-         height: 27.5px;
-         width: auto;
-         z-index: 100;
-         border-radius: 50%;
-         }
-          #fulllogo{
-         position: fixed;
-         top: 50%;
-         left: 50%;
-         margin-top: -280px;
-         margin-left: 0px;
-         white-space: nowrap;
-         transform: translate(-50%, -50%);
-         height: 60px;
-         width: auto;
-         z-index: 100;
-         border-radius: 50%;
-         display: none;
-         }
-         #yourname{
-       position: absolute;
-         top: 50%;
-         margin-top: -240px;
-         margin-left: calc(50% - 150px);
-   font-size: 14px;
-   padding: 5px;
-   border-radius: 5px;
-   text-align: left !important;
-   color: white;
-   z-index: 1;
-   display: none;
-   font-weight: bold;
-         }
-         .pronouns{
-            font-weight: normal; color: grey;
-         }
-         #songs{
-            position: absolute;
-         top: 50%;
-         margin-top: -210px;
-         margin-left: calc(50% - 145px);
-   font-size: 14px;
-   padding: 5px;
-   border-radius: 5px;
-   background-color: white;
-   text-align: left !important;
-   color: black;
-   z-index: 1;  
-   display: none; 
-         }
-         #friends{
-            position: absolute;
-         top: 50%;
-         margin-top: -210px;
-         margin-left: calc(50% - 87.5px);
-   font-size: 14px;
-   padding: 5px;
-   border-radius: 5px;
-   text-align: left !important;
-   color: white;
-   z-index: 1;  
-   display: none; 
-         }
-                  #lists{
-            position: absolute;
-         top: 50%;
-         margin-top: -210px;
-         margin-left: calc(50% - 22.5px);
-   font-size: 14px;
-   padding: 5px;
-   border-radius: 5px;
-   text-align: left !important;
-   color: white;
-   z-index: 1;  
-   display: none; 
-         }
-         #friendscalendar{
-            position: absolute;
-         top: 50%;
-         margin-top: -210px;
-         margin-left: calc(50% - 50px);
-   font-size: 14px;
-   padding: 5px 10px 5px 10px;
-   border-radius: 50%;
-   background-color: white;
-   text-align: left !important;
-   color: black;
-   z-index: 1; 
-   display: none;  
-         }
-         #search{
-       /*  margin-left: 142px;*/
-         position: absolute;
-         top: 50%;
-         margin-top: -320px;
-         margin-left: calc(50% + 126.5px);
-           border-radius: 50%;
-   font-size: 25px;
-   line-height: 25px;
-   border-radius: 50%;
-   background-color: white;
-   text-align: center;
-   color: rebeccapurple;
-   z-index: 1;
-   height: 27.5px;
-   width: 27.5px;
-         }
-         #searchbysong{
-       /*  margin-left: 142px;*/
-         position: absolute;
-         top: 50%;
-         margin-top: -280px;
-         margin-left: calc(50% - 20px);
-           border-radius: 50px;
-   font-size: 20px;
-   padding-left: 5px;
-   padding-right: 5px;
-   line-height: 25px;
-   border-radius: 50px;
-   background-color: #F5F5F5;
-   text-align: center;
-   color: black;
-   z-index: 2;
-   height: 27.5px;
-         }
-         #calendarbtn{
-       /*  margin-left: 142px;*/
-         position: absolute;
-         top: 50%;
-         margin-top: -320px;
-         margin-left: calc(50% + 126.5px);
-           border-radius: 50%;
-   font-size: 24px;
-   line-height: 24px;
-   border-radius: 50%;
-   background-color: white;
-   text-align: center;
-   color: black;
-   z-index: 1;
-   height: 27.5px;
-   width: 27.5px;
-   display: none;
-         }
-         #back{
-       /*  margin-left: 142px;*/
-         position: absolute;
-         top: 50%;
-         margin-top: -320px;
-         margin-left: calc(50% - 155.5px);
-           border-radius: 50%;
-   font-size: 20px;
-   line-height: 25px;
-   border-radius: 50%;
-   background-color: black;
-   text-align: center;
-   color: white;
-   z-index: 1;
-   height: 27.5px;
-   width: 27.5px;
-   display: none;
-         } 
-         .fava{
-            position: fixed;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%); 
-         margin-left: -100px;
-         margin-top: -190px;
-         display: none;
-         }
-         #favb{
-            position: fixed;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         margin-left: -100px; 
-         margin-top: -140px;
-         display: none;
-         }
-         #favc{
-            position: fixed;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%); 
-         margin-left: -100px;
-         margin-top: -90px;
-         display: none;
-         }
-         .favatitle{
-   position: absolute;
-   top: 50%;
-   margin-top: -210px;
-   margin-left: calc(50% - 70px);
-   font-size: 14px;
-   padding: 5px;
-   border-radius: 5px;
-   text-align: left !important;
-   color: white;
-   z-index: 1;
-   display: none;
-   font-weight: bold;
-         }
-         #favbtitle{
-             position: absolute;
-   top: 50%;
-   margin-top: -160px;
-   margin-left: calc(50% - 70px);
-   font-size: 14px;
-   padding: 5px;
-   border-radius: 5px;
-   text-align: left !important;
-   color: white;
-   z-index: 1;
-   display: none;
-   font-weight: bold;  
-         }
-      #favctitle{
-             position: absolute;
-   top: 50%;
-   margin-top: -110px;
-   margin-left: calc(50% - 70px);
-   font-size: 14px;
-   padding: 5px;
-   border-radius: 5px;
-   text-align: left !important;
-   color: white;
-   z-index: 1;
-   display: none;
-   font-weight: bold;  
-         }
-         #sodbox{
-            position: fixed;
-         top: 50%;
-         left: 50%;
-         margin-top: -65px;
-         transform: translate(-50%, -50%);
-         width: 270px;
-         height: 175px;
-         background-color: white;
-         border-radius: 10px;
-         display: none;
-         }
-         #sod{
-         position: fixed;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%); 
-         margin-left: -100px;
-         margin-top: -120px;
-         z-index: 200;
-         display: none;
-         }
-         #sodtitle{
-          position: absolute;
-   top: 50%;
-   margin-top: -142.5px;
-   margin-left: calc(50% - 70px);
-   font-size: 14px;
-   padding: 5px;
-   border-radius: 5px;
-   text-align: left !important;
-   color: black;
-   z-index: 200;
-   font-weight: bold;  
-   display: none;
-         }
-         #soddesc{
-            position: absolute;
-   top: 50%;
-   margin-top: -90px;
-   margin-left: calc(50% - 120px);
-   font-size: 12px;
-   padding: 5px;
-   border-radius: 5px;
-   text-align: left !important;
-   background-color: black;
-   color: white;
-   z-index: 200;
-   width: 240px;
-   display: none;
-         }
-    #soddate{
-position: absolute;
-   top: 50%;
-   margin-top: -5px;
-   margin-left: calc(50% - 120px);
-   font-size: 12px;
-   padding: 5px;
-   border-radius: 5px;
-   text-align: left !important;
-   color: grey;
-   z-index: 200;
-   display: none;  
-         }
-         #emotion{
-   position: absolute;
-   top: 50%;
-   margin-top: -135px;
-   margin-left: calc(50% + 90px);
-   font-size: 14px;
-   padding: 5px 6.5px 5px 6.5px;
-   border-radius: 50%;
-   text-align: left !important;
-   color: black;
-   background-color: black;
-   background-color: mediumspringgreen;
-   z-index: 200;
-   font-weight: bold;
-   display: none;
-         }
-         #sodbbox{
-            position: fixed;
-         top: 50%;
-         left: 50%;
-         margin-top: -110px;
-         transform: translate(-50%, -50%);
-         width: 270px;
-         height: 85px;
-         background-color: white;
-         border-radius: 10px;
-         display: none;
-         z-index: 300;
-         }
-                  #sodb{
-         position: fixed;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%); 
-         margin-left: -100px;
-         margin-top: -120px;
-         z-index: 300;
-         display: none;
-         }
-         #sodbtitle{
-          position: absolute;
-   top: 50%;
-   margin-top: -142.5px;
-   margin-left: calc(50% - 70px);
-   font-size: 14px;
-   padding: 5px;
-   border-radius: 5px;
-   text-align: left !important;
-   color: black;
-   z-index: 300;
-   font-weight: bold;  
-   display: none;
-         }
-    #sodbdate{
-position: absolute;
-   top: 50%;
-   margin-top: -95px;
-   margin-left: calc(50% - 120px);
-   font-size: 12px;
-   padding: 5px;
-   border-radius: 5px;
-   text-align: left !important;
-   color: grey;
-   z-index: 300;
-   display: none;  
-         }
-         #emotionb{
-   position: absolute;
-   top: 50%;
-   margin-top: -135px;
-   margin-left: calc(50% + 90px);
-   font-size: 14px;
-   padding: 5px 6.5px 5px 6.5px;
-   border-radius: 50%;
-   text-align: left !important;
-   color: black;
-   background-color: black;
-   background-color: tomato;
-   z-index: 300;
-   font-weight: bold;
-   display: none;
-         }
-      #sodcbox{
-            position: fixed;
-         top: 50%;
-         left: 50%;
-         margin-top: -10px;
-         transform: translate(-50%, -50%);
-         width: 270px;
-         height: 85px;
-         background-color: white;
-         border-radius: 10px;
-         display: none;
-         }
-                  #sodc{
-         position: fixed;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%); 
-         margin-left: -100px;
-         margin-top: -20px;
-         z-index: 200;
-         display: none;
-         }
-         #sodctitle{
-          position: absolute;
-   top: 50%;
-   margin-top: -42.5px;
-   margin-left: calc(50% - 70px);
-   font-size: 14px;
-   padding: 5px;
-   border-radius: 5px;
-   text-align: left !important;
-   color: black;
-   z-index: 200;
-   font-weight: bold;  
-   display: none;
-         }
-    #sodcdate{
-position: absolute;
-   top: 50%;
-   margin-top: 5px;
-   margin-left: calc(50% - 120px);
-   font-size: 12px;
-   padding: 5px;
-   border-radius: 5px;
-   text-align: left !important;
-   color: grey;
-   z-index: 200;
-   display: none;  
-         }
-         #emotionc{
-   position: absolute;
-   top: 50%;
-   margin-top: -35px;
-   margin-left: calc(50% + 90px);
-   font-size: 14px;
-   padding: 5px 6.5px 5px 6.5px;
-   border-radius: 50%;
-   text-align: left !important;
-   color: black;
-   background-color: black;
-   background-color: rebeccapurple;
-   z-index: 200;
-   font-weight: bold;
-   display: none;
-         }
-         #soddbox{
-            position: fixed;
-         top: 50%;
-         left: 50%;
-         margin-top: 90px;
-         transform: translate(-50%, -50%);
-         width: 270px;
-         height: 85px;
-         background-color: white;
-         border-radius: 10px;
-         display: none;
-         }
-                  #sodd{
-         position: fixed;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%); 
-         margin-left: -100px;
-         margin-top: 80px;
-         z-index: 200;
-         display: none;
-         }
-         #soddtitle{
-          position: absolute;
-   top: 50%;
-   margin-top: 57.5px;
-   margin-left: calc(50% - 70px);
-   font-size: 14px;
-   padding: 5px;
-   border-radius: 5px;
-   text-align: left !important;
-   color: black;
-   z-index: 200;
-   font-weight: bold;  
-   display: none;
-         }
-    #sodddate{
-position: absolute;
-   top: 50%;
-   margin-top: 105px;
-   margin-left: calc(50% - 120px);
-   font-size: 12px;
-   padding: 5px;
-   border-radius: 5px;
-   text-align: left !important;
-   color: grey;
-   z-index: 200;
-   display: none;  
-         }
-         #emotiond{
-   position: absolute;
-   top: 50%;
-   margin-top: 65px;
-   margin-left: calc(50% + 90px);
-   font-size: 14px;
-   padding: 5px 6.5px 5px 6.5px;
-   border-radius: 50%;
-   text-align: left !important;
-   color: black;
-   background-color: black;
-   background-color: mediumspringgreen;
-   z-index: 200;
-   font-weight: bold;
-   display: none;
+            display: inline;
+            line-height: 50px;
+            height: 32px;
+            width: auto;
+            margin-top: -5px;
+            margin-right: 5px;
          }
          #sortuser{
          position: fixed;
@@ -673,144 +222,18 @@ position: absolute;
             color: white;
             background-color: #3a4797;
          }
-         #user{
-   position: absolute;
-         top: 50%;
-         margin-top: -320px;
-         margin-left: calc(50% - 120px);
-   font-size: 14px;
-   padding: 5px;
-   border-radius: 5px;
-   background-color: white;
-   text-align: left !important;
-   color: rebeccapurple;
-   z-index: 1;
-         }
-          #searchbackground{
+         #userlist{
          position: fixed;
          top: 50%;
          left: 50%;
-         transform: translate(-50%, -50%); 
-         background-color: black;
-         height: 730px;
-         width: 360px;
-         border-radius: 40px;
-         z-index: -1;
-         border: 5px solid black;
+         transform: translate(-50%, -50%);
          display: none;
+         text-align: center;
          }
-         #background{
-         position: fixed;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%); 
-         background-color: rebeccapurple;
-         height: 730px;
-         width: 360px;
-         border-radius: 40px;
-         z-index: -1;
-         border: 5px solid black;
-         }
-         #background.pause{
-            background-color: black !important;
-         }
-         #leftbackground{
-         position: fixed;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%); 
-         background-color: rgba(0, 0, 0,  0);
-         height: 730px;
-         width: 180px;
-         margin-left: -90px;
-         border-radius: 25px 0% 0% 25px;
-         z-index: -.5;
-         }
-         #bezel{
-           position: fixed;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%); 
-         background-color: black;
-         border-bottom-left-radius: 10px;
-         border-bottom-right-radius: 10px;
-         height: 30px;
-         width: 170px; 
-         margin-top: -350px;
-         }
-         #centralsearch{
-         position: fixed;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         margin-top: -306.5px;
-         height: 30px;
-         /*border: solid 2.5px black;*/
-         border: none;
-         background-color: black;
-         color: white;
-         border-radius: 5px;
-         font-size: 18px;
-         display: none;
-         padding-left: 10px;
-         width: 230px;
-         margin-left: 10px;
-         font-weight: bold;
-         }
-         input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
-input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
-
-/* clears the 'X' from Chrome */
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration { display: none; }
-         input:focus {
-            border: none;
- outline: none;
- box-shadow: none;
-}
-#rhysbar{
-    position: fixed;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         margin-top: 347.5px;
-   height: 4px;
-   width: 120px;
-   background-color: white;
-   border-radius: 50px;
-}
-div.scrollmenu {
-  overflow: auto;
-  white-space: nowrap;
-  position: fixed;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         max-width: 300px;
-   margin-top: -250px;
-   display: none;
-   -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;
-}
-
-div.scrollmenu h2{
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 5px;
-  margin-right: 10px;
-  font-size: 14px;
-  background-color: rgba(0, 0, 0, 0);
-  border-radius: 5px;
-  text-decoration: none;
-}
       </style>
    </head>
-   <body>
-   <!--<body onload="date()">
-       Optional JavaScript -->
+   <body onload="date()">
+      <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -819,8 +242,7 @@ div.scrollmenu h2{
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
       <script>
-var usertextcolor = "";
-var caught = 0;
+
 const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
@@ -840,12 +262,11 @@ if (month <10) {month = "0"+month;}
 var year = dateObj.getFullYear();
 
 var newdate =  monthNames[dateObj.getMonth()] + " " + day + ", " + year;
-newdate = "July 18, 2022";
 var newcalendardate = year+"-"+month+"-"+day;
 
-/*function date(){
+function date(){
 document.getElementById("date").innerHTML = (newdate);
-}*/
+}
 var aha = "";
 var formalmonth = "";
 var annoying;
@@ -944,77 +365,30 @@ if(newdate == fullarray[z][4]){array.push(fullarray[z]);}
           var artist = array[num][1];
           var lnk = array[num][2];
           var img = array[num][3]; 
-         	document.write("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><img class='mainimg' onclick='goddammit()' style='width:270px; height:270px;' src='"+img+"'><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4>");
+         	document.write("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:250px; height:250px;' src='"+img+"'></a><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
             document.getElementById("user").innerHTML = (array[num][5]);
-            document.getElementById("user").setAttribute('style','text-align:left;');
          }
           document.close();
          }
 bonusnum = num;
           function up() {
-             $("#background").removeClass("pause");
              bonusnum = bonusnum -1;
              if (bonusnum < 0){bonusnum = 0;}
           var btitle = array[bonusnum][0];
           var bartist = array[bonusnum][1];
           var blnk = array[bonusnum][2];
           var bimg = array[bonusnum][3];
-document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+blnk+");} .im{visibility:hidden;}</style><img class='mainimg' onclick='goddammit()' style='width:270px; height:270px;' src='"+bimg+"'><h3 id='title'>"+btitle+"</h3><h4 id='artist'>"+bartist+"</h4>");
-if (bonusnum == 0){
-$("#background").css('background-color', 'rebeccapurple');
-}
-else if (bonusnum == 1){
-$("#background").css('background-color', 'skyblue');
-}
-else if (bonusnum == 2){
-$("#background").css('background-color', '#dbc12e');
-}
-else if (bonusnum == 3){
-$("#background").css('background-color', 'tomato');
-}
-else if (bonusnum == 4){
-$("#background").css('background-color', 'mediumspringgreen');
-}
-else if (bonusnum == 5){
-$("#background").css('background-color', '#ffbcd9');
-}
-else if (bonusnum == 6){
-$("#background").css('background-color', 'goldenrod');
-}
-else if (bonusnum == 7){
-$("#background").css('background-color', 'thistle');
-}
-else if (bonusnum == 8){
-$("#background").css('background-color', 'burlywood');
-}
-else if (bonusnum == 9){
-$("#background").css('background-color', '#B5B5AC');
-}
+document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+blnk+");} .im{visibility:hidden;}</style><a href='"+blnk+"'><img style='width:250px; height:250px;' src='"+bimg+"'></a><h3 id='title'>"+btitle+"</h3><h4 id='artist'>"+bartist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
 document.getElementById("user").innerHTML = (array[bonusnum][5]);
-document.getElementById("user").setAttribute('style','text-align:left;');
-usertextcolor = $("#background").css("background-color");
-$("#user").css("color", usertextcolor);
-$("#search").css("color", usertextcolor);
           document.close();
          }
 
                   function down() {
-                      $("#background").removeClass("pause");
              bonusnum = bonusnum + 1;
-             if (bonusnum == 10){
-$("#background").css('background-color', 'black');
-$("#user").css("color", "black");
-$("#search").css("color", "black");
-caught = 1;
-}
-else{
-   caught = 0;
-}
              if (bonusnum > array.length-1){
                bonusnum = array.length;
-               document.getElementById("randdemo").innerHTML = ("<span id = 'done'>all caught up!</span>");
+               document.getElementById("randdemo").innerHTML = ("<span id = 'done'>all caught up!</span><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
                document.getElementById("user").innerHTML = ("");
-               document.getElementById("user").setAttribute('style','text-align:left;');
 
              }
              else{
@@ -1022,44 +396,8 @@ else{
           var uartist = array[bonusnum][1];
           var ulnk = array[bonusnum][2];
           var uimg = array[bonusnum][3];
-document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+ulnk+");} .im{visibility:hidden;}</style><img class='mainimg' onclick='goddammit()' style='width:270px; height:270px;' src='"+uimg+"'><h3 id='title'>"+utitle+"</h3><h4 id='artist'>"+uartist+"</h4>");
-if (caught ==1){}
-else{
-if (bonusnum == 0){
-$("#background").css('background-color', 'rebeccapurple');
-}
-else if (bonusnum == 1){
-$("#background").css('background-color', 'skyblue');
-}
-else if (bonusnum == 2){
-$("#background").css('background-color', '#dbc12e');
-}
-else if (bonusnum == 3){
-$("#background").css('background-color', 'tomato');
-}
-else if (bonusnum == 4){
-$("#background").css('background-color', 'mediumspringgreen');
-}
-else if (bonusnum == 5){
-$("#background").css('background-color', '#ffbcd9');
-}
-else if (bonusnum == 6){
-$("#background").css('background-color', 'goldenrod');
-}
-else if (bonusnum == 7){
-$("#background").css('background-color', 'thistle');
-}
-else if (bonusnum == 8){
-$("#background").css('background-color', 'burlywood');
-}
-else if (bonusnum == 9){
-$("#background").css('background-color', '#B5B5AC');
-}
-}
+document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+ulnk+");} .im{visibility:hidden;}</style><a href='"+ulnk+"'><img style='width:250px; height:250px;' src='"+uimg+"'></a><h3 id='title'>"+utitle+"</h3><h4 id='artist'>"+uartist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
 document.getElementById("user").innerHTML = (array[bonusnum][5]);
-usertextcolor = $("#background").css("background-color");
-$("#user").css("color", usertextcolor);
-$("#search").css("color", usertextcolor);
 }
           document.close();
          }
@@ -1102,10 +440,11 @@ title = array[num][0];
 artist = array[num][1];
 lnk = array[num][2];
 img = array[num][3]; 
-document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><img class='mainimg' onclick='goddammit()' style='width:270px; height:270px;' src='"+img+"'><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4>");
+document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:250px; height:250px;' src='"+img+"'></a><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
             document.getElementById("user").innerHTML = (array[num][5]);
 //$("#header").toggleClass("green");
 $("#randdemo").toggle();
+$(".sub").toggle();
 $("#user").toggle();
 //$("#sortuser").toggle();
 $("#userlist").hide();
@@ -1130,83 +469,24 @@ title = array[num][0];
 artist = array[num][1];
 lnk = array[num][2];
 img = array[num][3]; 
-document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><img class='mainimg' onclick='goddammit()' style='width:270px; height:270px;' src='"+img+"'><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4>");
+document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:250px; height:250px;' src='"+img+"'></a><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
    document.getElementById("user").innerHTML = (array[num][5]);
 //$("#header").removeClass("green");
 $("#randdemo").show();
+$(".sub").show();
 $("#user").show();
 //$("#sortuser").hide();
 $("#userlist").hide();
          } 
       </script>
    <!--   <img src ="http://cdn.onlinewebfonts.com/svg/img_569204.png" id="button" class="fa-archive">-->
-   <img id="logo" src="https://data.whicdn.com/images/331836944/original.jpg"><h2 id="user"></h2>
-   <img id="fulllogo" src="https://data.whicdn.com/images/331836944/original.jpg"><h2 id="yourname">Ben Gottlieb <span class="pronouns">(he/him)</span></h2>
-   <h2 id="songs">Songs</h2>
-   <h2 id="friends">Friends</h2>
-   <h2 id="lists">Lists</h2>
-   <h2 id="search">+</h2>
-  <!-- <h2 id="calendarbtn">c</h2>-->
-   <h2 id="back">&#8678;</h2>
-   <div class="scrollmenu">
-  <h2 style="background-color: white; color: black;">Songs</h2>
-  <h2>Friends</h2>
-  <h2>Lists</h2>
-  <h2>Dates</h2>
-</div>
-   <div id="sodbox"></div>
-   <img id="sod" src="https://media.pitchfork.com/photos/60c18a5c42a3ecb7ba100fb6/master/pass/Sling%20Artwork.jpg">
-   <h2 id="emotion">&#128513;</h2>
-   <h2 id="sodtitle">Amoeba<br><span class="pronouns">Clairo</span></h2>
-   <h2 id="soddesc">This song slaps it's Clairo what else would you expect from this genius. Love the little swells after the chorus and the power that comes from her gentle sing-along layered vocals.</h2>
-   <h2 id="soddate">Today</h2>
-   <div id="sodbbox"></div>
-   <img id="sodb" src="https://media.pitchfork.com/photos/5929c52ec0084474cd0c36ba/1:1/w_600/ce3d846c.jpg">
-   <h2 id="emotionb">&#128544;</h2>
-   <h2 id="sodbtitle">Pull Up The People<br><span class="pronouns">M.I.A.</span></h2>
-   <h2 id="sodbdate">Today</h2>
-   <div id="sodcbox"></div>
-   <img id="sodc" src="https://media.pitchfork.com/photos/5e4d5209f98c800008cf6620/1:1/w_600/King-Krule-Man-Alive.jpg">
-   <h2 id="emotionc">&#128546;</h2>
-   <h2 id="sodctitle">Comet Face<br><span class="pronouns">King Krule</span></h2>
-   <h2 id="sodcdate">Yesterday</h2>
-   <div id="soddbox"></div>
-   <img id="sodd" src="https://images.genius.com/ee71a34bb37d526a914cb3f34e27fdc6.640x640x1.jpg">
-   <h2 id="emotiond">&#128513;</h2>
-   <h2 id="soddtitle">Thankful<br><span class="pronouns">454</span></h2>
-   <h2 id="sodddate">Monday</h2>
-   
-
-   <img class="fava" src="https://media.pitchfork.com/photos/5d2750847953c00009b978cb/1:1/w_600/Clairo_Immunity.jpg">
-   <h2 class="favatitle">Sofia<br><span class="pronouns">Clairo</span></h2>
-   <img class="fava" style="margin-top: -135px;" src="https://cdn.albumoftheyear.org/album/265330-bubble-gum.jpg">
-   <h2 class="favatitle" style="margin-top: -155px;">Bubble Gum<br><span class="pronouns">Clairo</span></h2>
-   <img class="fava" style="margin-top: -80px;" src="https://m.media-amazon.com/images/I/81KA8z8t8CL._SS500_.jpg">
-   <h2 class="favatitle" style="margin-top: -100px;">Pretty Girl<br><span class="pronouns">Clairo</span></h2>
-   <img class="fava" style="margin-top: -25px;" src="https://i.scdn.co/image/ab67616d0000b27390c00af3fd8de6b9f510c1b8">
-   <h2 class="favatitle" style="margin-top: -45px;">Flaming Hot Cheetos<br><span class="pronouns">Clairo</span></h2>
-   <img class="fava" style="margin-top: 30px;" src="https://media.pitchfork.com/photos/60c18a5c42a3ecb7ba100fb6/1:1/w_600/Sling%20Artwork.jpg">
-   <h2 class="favatitle" style="margin-top: 10px;">Amoeba<br><span class="pronouns">Clairo</span></h2>
-   <img class="fava" style="margin-top: 85px;" src="https://media.pitchfork.com/photos/5d2750847953c00009b978cb/1:1/w_600/Clairo_Immunity.jpg">
-   <h2 class="favatitle" style="margin-top: 65px;">Bags<br><span class="pronouns">Clairo</span></h2>
-   <img class="fava" style="margin-top: 140px;" src="https://static.wikia.nocookie.net/clairopedia/images/b/b9/Clairo-4Ever-Single-iTunes.jpg/revision/latest?cb=20210329092704">
-   <h2 class="favatitle" style="margin-top: 120px;">4EVER<br><span class="pronouns">Clairo</span></h2>
-   <img class="fava" style="margin-top: 195px;" src="https://i.scdn.co/image/ab67616d0000b273bf94e27360806b5aa5025f93">
-   <h2 class="favatitle" style="margin-top: 175px;">How - demo<br><span class="pronouns">Clairo</span></h2>
-   <img class="fava" style="margin-top: 250px;" src="https://i.scdn.co/image/ab67616d0000b273bf94e27360806b5aa5025f93">
-   <h2 class="favatitle" style="margin-top: 230px;">Hello?<br><span class="pronouns">Clairo</span></h2>
-   <img class="fava" style="margin-top: 305px;" src="https://media.pitchfork.com/photos/5d2750847953c00009b978cb/1:1/w_600/Clairo_Immunity.jpg">
-   <h2 class="favatitle" style="margin-top: 285px;">Softly<br><span class="pronouns">Clairo</span></h2>
-   <input id="centralsearch" type="search" name="" placeholder="search songs..." value="Clairo">
-   <!--<h2 id="searchbysong">songs</h2>-->
-   <h5 id="sortuser" style="display: none;">sort by user</h5>
-   <div id="background" onclick="down()"></div>
-   <div id="leftbackground" onclick="up()"></div>
-   <div id="searchbackground"></div>
-   <div id="rhysbar"></div>
-   <div id="switchcontainer">
-   <div id="bezel"></div>
-
+   <div id="header"><img id="logo" src="logo.png"><h5 id="date"></h5></div>
+   <h5 id="sortuser">sort by user</h5>
+   <div id="userlist">
+      <script>getuserlist();</script>
+   </div>
+      <h5 class="sub" style="display:none;">SUBMITTED BY:</h5>
+      <h2 id="user"></h2>
       <!--<i class="fa fa-calendar" onclick="date()" aria-hidden="true"></i>-->
       <div class="album" id="randdemo" style='visibility: visible;'>
         <script>getRandomTitle();</script>
@@ -1247,11 +527,12 @@ else{
 artist = array[num][1];
 lnk = array[num][2];
 img = array[num][3]; 
-document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><img class='mainimg' onclick='goddammit()' style='width:270px; height:270px;' src='"+img+"'><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4>");
+document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:250px; height:250px;' src='"+img+"'></a><h3 id='title'>"+title+"</h3><h4 id='artist'>"+artist+"</h4><i id='up' onclick='up()' class='fa fa-caret-square-o-left album' style='margin-top: -45px; margin-left: -175px;'></i><i id='down' onclick='down()' class='fa fa-caret-square-o-right album' style='margin-top: -45px; margin-left: 160px;'></i>");
             document.getElementById("user").innerHTML = (array[num][5]);
 }
 //$("#header").toggleClass("green");
 $("#randdemo").toggle();
+$(".sub").toggle();
 $("#user").toggle();
 $("#datepicker").toggle();
 $("#sortuser").hide();
@@ -1260,79 +541,12 @@ $("#sortuser").hide();
 });
 </script> 
       <script>
-$("#search").click(function(){
-    $("#background").hide();
-    $("#leftbackground").hide();
-    $("#searchbackground").show();
-    $("#logo").hide();
-    $("#user").hide();
-    $("#calendarbtn").show();
-    $(".scrollmenu").show();
-    $("#search").hide();
-    $("#title").hide();
-    $("#artist").hide();
-    $(".mainimg").hide();
-    $("#back").show();
-    $("input").show();
-    $(".fava,#favb,#favc,.favatitle,#favbtitle,#favctitle").show();
-  });
-$("#back").click(function(){
-    $("#background").show();
-    $("#leftbackground").show();
-    $("#searchbackground").hide();
-    $("#logo").show();
-    $("#user").show();
-    $("#calendarbtn").hide();
-    $(".scrollmenu").hide();
-    $("#search").show();
-    $("#title").show();
-    $("#artist").show();
-    $(".mainimg").show();
-    $("#back").hide();
-    $("input").hide();
-    $("#fulllogo").hide();
-    $("#yourname").hide();
-    $("#lists,#friends,#songs").hide();
-    $(".fava,#favb,#favc,.favatitle,#favbtitle,#favctitle").hide();
-   //$("#sodbox,#sod,#sodtitle,#soddesc,#soddate,#emotion").hide();
-   $("#sodbbox,#sodb,#sodbtitle,#sodbdate,#emotionb").hide();
-   $("#sodcbox,#sodc,#sodctitle,#sodcdate,#emotionc").hide();
-   $("#soddbox,#sodd,#soddtitle,#sodddate,#emotiond").hide();
-  });
-$("#logo").click(function(){
-    $("#background").hide();
-    $("#leftbackground").hide();
-    $("#searchbackground").show();
-    $("#logo").hide();
-    $("#user").hide();
-    $("#calendarbtn").hide();
-    $(".scrollmenu").hide();
-    $("#search").hide();
-    $("#title").hide();
-    $("#artist").hide();
-    $(".mainimg").hide();
-    $("#back").show();
-    $("#fulllogo").show();
-    $("#yourname").show();
-    $("#lists,#friends,#songs").show();
-  //$("#sodbox,#sod,#sodtitle,#soddesc,#soddate,#emotion").show();
-  $("#sodbbox,#sodb,#sodbtitle,#sodbdate,#emotionb").show();
-  $("#sodcbox,#sodc,#sodctitle,#sodcdate,#emotionc").show();
-  $("#soddbox,#sodd,#soddtitle,#sodddate,#emotiond").show();
-  });
-function goddammit(){
-   $("#background").toggleClass("pause");
-   usertextcolor = $("#background").css("background-color");
-$("#user").css("color", usertextcolor);
-$("#search").css("color", usertextcolor);
-console.log("wait does this work");
-}
-
       $('#header').click(function() {
          /*if ($(this).hasClass('green')){
              $("#datepicker").hide();
              $("#sortuser").hide();
              $("#randdemo").show();
+            $(".sub").show();
             $("#user").show();
              $("#userlist").hide();
              $("#sortuser").removeClass("toggle");
@@ -1341,10 +555,12 @@ console.log("wait does this work");
             $("#datepicker").show();
              $("#sortuser").show();
              $("#randdemo").hide();
+            $(".sub").hide();
             $("#user").hide();
          }
          $(this).toggleClass("green");*/
           document.getElementById("randdemo").innerHTML = ("<span id = 'none'>Week 1:</span><h5 onclick='week(this.id)' id='day1' class='week'>July 18, 2022</h5><h5 onclick='week(this.id)' id='day2' class='week'>July 19, 2022</h5><h5 onclick='week(this.id)' id='day3' class='week'>July 20, 2022</h5><h5 onclick='week(this.id)' id='day4' class='week'>July 21, 2022</h5><h5 onclick='week(this.id)' id='day5' class='week'>July 22, 2022</h5><h5 onclick='week(this.id)' id='day6' class='week'>July 23, 2022</h5><h5 onclick='week(this.id)' id='day7' class='week'>July 24, 2022</h5>");
+           $(".sub").hide();
             $("#user").hide();
             $("#sortuser").removeClass("toggle");
             $("#randdemo").show();
@@ -1356,6 +572,7 @@ console.log("wait does this work");
             $("#userlist").toggle();
             $(this).toggleClass("toggle");
             $("#randdemo").toggle();
+            $(".sub").hide();
             $("#user").hide();
         });
 </script>
